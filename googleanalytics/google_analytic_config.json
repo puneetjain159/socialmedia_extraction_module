@@ -1,0 +1,292 @@
+[
+    {
+        "name_view": "gender",
+        "startDate": "1daysago",
+        "endDate": "yesterday",
+        "metrics": [
+            "ga:sessions",
+            "ga:sessionDuration",
+            "ga:transactionsPerSession",
+            "ga:bounceRate",
+            "ga:newUsers",
+            "ga:users"
+        ],
+        "dimensions": [
+            "ga:date",
+            "ga:userGender"
+
+        ]
+    },
+    {
+        "name_view": "userAgeBracket",
+        "startDate": "1daysago",
+        "endDate": "yesterday",
+        "metrics": [
+            "ga:sessions",
+            "ga:sessionDuration",
+            "ga:transactionsPerSession",
+            "ga:bounceRate",
+            "ga:newUsers",
+            "ga:users"
+        ],
+        "dimensions": [
+            "ga:date",
+            "ga:userAgeBracket"
+
+        ]
+    },
+    {
+        "name_view": "country",
+        "startDate": "1daysago",
+        "endDate": "yesterday",
+        "metrics": [
+            "ga:sessions",
+            "ga:sessionDuration",
+            "ga:transactionsPerSession",
+            "ga:bounceRate",
+            "ga:newUsers",
+            "ga:users"
+        ],
+        "dimensions": [
+            "ga:date",
+            "ga:country"
+        ]
+    },
+    {
+        "name_view": "city",
+        "startDate": "1daysago",
+        "endDate": "yesterday",
+        "metrics": [
+            "ga:sessions",
+            "ga:sessionDuration",
+            "ga:transactionsPerSession",
+            "ga:bounceRate",
+            "ga:newUsers",
+            "ga:users"
+        ],
+        "dimensions": [
+            "ga:date",
+            "ga:city"
+        ]
+    },
+    {
+        "name_view": "device",
+        "startDate": "1daysago",
+        "endDate": "yesterday",
+        "metrics": [
+            "ga:sessions",
+            "ga:sessionDuration",
+            "ga:transactionsPerSession",
+            "ga:bounceRate",
+            "ga:newUsers",
+            "ga:users"
+        ],
+        "dimensions": [
+            "ga:date",
+            "ga:deviceCategory"
+        ]
+    },
+    {
+        "name_view": "source",
+        "startDate": "1daysago",
+        "endDate": "yesterday",
+        "metrics": [
+            "ga:sessions",
+            "ga:sessionDuration",
+            "ga:transactionsPerSession",
+            "ga:bounceRate",
+            "ga:newUsers",
+            "ga:users"
+        ],
+        "dimensions": [
+            "ga:date",
+            "ga:source"
+        ]
+    },    {
+        "name_view": "channelGrouping",
+        "startDate": "1daysago",
+        "endDate": "yesterday",
+        "metrics": [
+            "ga:sessions",
+            "ga:sessionDuration",
+            "ga:transactionsPerSession",
+            "ga:bounceRate",
+            "ga:newUsers",
+            "ga:users"
+        ],
+        "dimensions": [
+            "ga:date",
+            "ga:channelGrouping"
+        ]
+    },
+    {
+        "name_view": "landingPagePath",
+        "startDate": "1daysago",
+        "endDate": "yesterday",
+        "metrics": [
+            "ga:sessions",
+            "ga:sessionDuration",
+            "ga:transactionsPerSession",
+            "ga:bounceRate",
+            "ga:newUsers",
+            "ga:users"
+        ],
+        "dimensions": [
+            "ga:date",
+            "ga:landingPagePath"
+        ]
+    },
+    {
+        "name_view": "eventAction",
+        "startDate": "1daysago",
+        "endDate": "yesterday",
+        "metrics": [
+            "ga:sessions",
+            "ga:sessionDuration",
+            "ga:transactionsPerSession",
+            "ga:bounceRate",
+            "ga:newUsers",
+            "ga:users"
+        ],
+        "dimensions": [
+            "ga:date",
+            "ga:eventAction"
+        ]
+    },
+       {
+        "name_view": "eventCategory",
+        "startDate": "1daysago",
+        "endDate": "yesterday",
+        "metrics": [
+            "ga:sessions",
+            "ga:sessionDuration",
+            "ga:transactionsPerSession",
+            "ga:bounceRate",
+            "ga:newUsers",
+            "ga:users"
+        ],
+        "dimensions": [
+            "ga:date",
+            "ga:eventCategory"
+        ]
+    },
+    {
+        "name_view": "exitPagePath",
+        "startDate": "1daysago",
+        "endDate": "yesterday",
+        "metrics": [
+            "ga:sessions",
+            "ga:sessionDuration",
+            "ga:transactionsPerSession",
+            "ga:bounceRate",
+            "ga:newUsers",
+            "ga:users"
+        ],
+        "dimensions": [
+            "ga:date",
+            "ga:exitPagePath"
+        ]
+    },
+    {
+        "name_view": "keyword",
+        "startDate": "1daysago",
+        "endDate": "yesterday",
+        "metrics": [
+            "ga:sessions",
+            "ga:sessionDuration",
+            "ga:transactionsPerSession",
+            "ga:bounceRate",
+            "ga:newUsers",
+            "ga:users"
+        ],
+        "dimensions": [
+            "ga:date",
+            "ga:keyword"
+        ]
+    },
+    {
+        "name_view": "adMatchType",
+        "startDate": "1daysago",
+        "endDate": "yesterday",
+        "metrics": [
+            "ga:sessions",
+            "ga:sessionDuration",
+            "ga:transactionsPerSession",
+            "ga:bounceRate",
+            "ga:newUsers",
+            "ga:users"
+        ],
+        "dimensions": [
+            "ga:date",
+            "ga:adMatchType"
+        ]
+    },
+    {
+        "name_view": "socialNetwork",
+        "startDate": "1daysago",
+        "endDate": "yesterday",
+        "metrics": [
+            "ga:sessions",
+            "ga:sessionDuration",
+            "ga:transactionsPerSession",
+            "ga:bounceRate",
+            "ga:newUsers",
+            "ga:users"
+        ],
+        "dimensions": [
+            "ga:date",
+            "ga:socialNetwork"
+        ]
+    },
+    {
+        "name_view": "socialEngagementType",
+        "startDate": "1daysago",
+        "endDate": "yesterday",
+        "metrics": [
+            "ga:sessions",
+            "ga:sessionDuration",
+            "ga:transactionsPerSession",
+            "ga:bounceRate",
+            "ga:newUsers",
+            "ga:users"
+        ],
+        "dimensions": [
+            "ga:date",
+            "ga:socialEngagementType"
+        ]
+    },
+    {
+        "name_view": "hasSocialSourceReferral",
+        "startDate": "1daysago",
+        "endDate": "yesterday",
+        "metrics": [
+            "ga:sessions",
+            "ga:sessionDuration",
+            "ga:transactionsPerSession",
+            "ga:bounceRate",
+            "ga:newUsers",
+            "ga:users"
+        ],
+        "dimensions": [
+            "ga:date",
+            "ga:hasSocialSourceReferral"
+        ]
+    },
+    {
+        "name_view": "OverallStats",
+        "startDate": "1daysago",
+        "endDate": "yesterday",
+        "metrics": [
+            "ga:sessions",
+            "ga:sessionDuration",
+            "ga:transactionsPerSession",
+            "ga:bounceRate",
+            "ga:newUsers",
+            "ga:users"
+        ],
+        "dimensions": [
+            "ga:date"
+
+        ]
+    }
+]
