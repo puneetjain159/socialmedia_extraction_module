@@ -33,22 +33,29 @@ rds_con_dict = {
     "password": config['rds_connection']['password']
     }
 
-#  Initialize the Google Analytics API 
-ga = googleApi(KEY_FILE_LOCATION = KEY_FILE_LOCATION)
 
-# Initialize PostGreSQL
+def handler(event,context):
+    '''
+    Function to run inside Lambda Container
+    '''
+    #  Initialize the Google Analytics API 
+    ga = googleApi(KEY_FILE_LOCATION = KEY_FILE_LOCATION)
 
-db = PostGreWrapper(rds_con_dict)
-db.connect()
+    # Initialize PostGreSQL
 
-# Read the Google Configuration Files and start collecting the metrics
-rds_con = {}
-for metric in ga_config:
-    requestbody = ga.create_request_json(metric)
-    df = ga.convert_json_pandas(ga.get_report(requestbody))
-    rds_con["googleanalytics." + metric['name_view'].lower()] = df
+    db = PostGreWrapper(rds_con_dict)
+    db.connect()
 
-# Write to the RDS 
-db.copy_to_rds(rds_con)
+    # Read the Google Configuration Files and start collecting the metrics
+    rds_con = {}
+    for metric in ga_config:
+        requestbody = ga.create_request_json(metric)
+        df = ga.convert_json_pandas(ga.get_report(requestbody))
+        rds_con["googleanalytics." + metric['name_view'].lower()] = df
+
+    # Write to the RDS 
+    db.copy_to_rds(rds_con)
+
+    return "Data written for Google Analytics"
 
     
