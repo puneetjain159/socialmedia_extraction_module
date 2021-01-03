@@ -30,7 +30,7 @@ class googleApi():
             self.KEY_FILE_LOCATION, self.SCOPES)
 
         # Build the service object.
-        analytics = build('analyticsreporting', 'v4', credentials=credentials)
+        analytics = build('analyticsreporting', 'v4', credentials=credentials,cache_discovery=False)
 
         return analytics
 
