@@ -2,6 +2,7 @@ from Instagram.base_api import InstagramAPI
 from Instagram.mediafetcher import media
 from Instagram.user import UserAPI
 from Instagram.insightsfetcher import InsightsAPI
+from Instagram.storiesfetcher import StoriesMedia
 from utils.postgrewrapper import PostGreWrapper
 
 
@@ -34,6 +35,7 @@ API = InstagramAPI(access_token = config['instagram']['access_token'],
 API.GetUserInstaid()
 
 m = media(API)
+stories = StoriesMedia(API)
 
 # Get all the content has a limit or since filter with it
 datetime.today()
@@ -41,7 +43,12 @@ delta = datetime.today() - timedelta(days=700)
 utc=pytz.UTC
 delta =utc.localize(delta)
 
-post_content = m.mediafetcher(limit =25,since =delta)
+#######
+post_stories  = stories.mediafetcher()
+post_content = m.mediafetcher(since =delta)
+
+
+###########
 
 # Process the comments into another list 
 ##################################################
@@ -54,11 +61,17 @@ comments = pd.DataFrame(comments)
 comments['update_date'] = str(datetime.today())
 comments.set_index('id',inplace=True)
 #################################################
-# Process and correct the insights
+# Process and correct the insights of posts
 ##################################################
 post_content = m.process_insights(post_content)
 post_content = pd.DataFrame(post_content['json_data']['data'])
 post_content['update_date'] = str(datetime.today())
+#################################################
+# Process and correct the insights of stores
+##################################################
+post_stories = stories.process_insights(post_stories)
+post_stories = pd.DataFrame(post_stories['json_data']['data'])
+post_stories['update_date'] = str(datetime.today())
 #################################################
 # Get the user statistics
 ############################################################################
@@ -75,6 +88,9 @@ user_data['update_date'] = str(dateparser.parse(metric['values'][1]['end_time'])
 
 for metric in lifetime_insight['json_data']['insights']['data']:
     user_data["lifetime_" + metric['name']] = metric['values'][0]['value']
+
+
+user_data = pd.DataFrame([user_data])  
 ############################################################################
 
 
@@ -87,5 +103,8 @@ upsert(db.rds_con, comments, "comments", "update", schema="instagram", create_sc
 
 
 # add the other tables
-db.copy_to_rds({"instagram.posts",post_content,
-                "instagram.user",user_data})
+db.copy_to_rds({"instagram.posts":post_content,
+                "instagram.stories":post_stories, 
+                "instagram.user":user_data})
+
+db.copy_to_rds({})
